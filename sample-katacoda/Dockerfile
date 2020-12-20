@@ -1,3 +1,5 @@
-FROM evarga/jenkins-slave
-RUN apt-get update && \
-apt-get install -y python 
+FROM jenkins/jenkins:2.263.1
+
+COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
+RUN $HOME/jenkins/local/bin/install-plugins.sh  < /usr/share/jenkins/ref/plugins.txt
+ENV HOME $JENKINS_HOME
