@@ -1,3 +1,3 @@
 FROM evarga/jenkins-slave
 RUN apt-get update && \
-apt-get install -y python
+apt-get install -y python 
